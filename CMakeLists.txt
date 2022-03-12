@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
-project(Ex1)
+project(untitled25)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Ex1 main.cpp)
+add_executable(untitled25 main.cpp)

@@ -5,15 +5,18 @@
 #include <iostream>
 #include "mat.hpp"
 
+using namespace std;
 string ariel::mat(int column, int row, char a, char b) {
-    if (column < 0 || row < 0) { // check if the values are not negative
-        throw std::invalid_argument("Mat size is always positive");
+    const int ascii_ = 33;
+    const int ascii = 126;
+    if (column < 1 || row < 1) { // check if the values are not negative
+        throw invalid_argument("Mat size is always positive");
     }
     if (column % 2 == 0 || row % 2 == 0) { // check if mat is even.
-        throw std::invalid_argument("Mat size is always odd");
+        throw invalid_argument("Mat size is always odd");
     }
-    if (a == ' ' || b == ' ' || a == '\n' || b == '\n' || a == '\r' || b == '\r' || a == '\t' || b == '\t') { // check spaces value
-        throw std::invalid_argument("Mat is always with no spaces");
+    if (!((a >=ascii_ && a <=ascii) && (b >= ascii_ && b <=ascii))) { // check spaces value
+        throw invalid_argument("the char is over the boundary of ascii");
     }
     string matrix;
     int iterator = 0;
